@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <map>
 
 int main(void) {
@@ -6,14 +6,14 @@ int main(void) {
 	std::map<char, int> mp;
 	std::multimap<int, char> mtp;
 
-	for (auto& i : symbols) mp[i]++; // Увиличиваем значения и присваиваем элементы
-	for (auto& pair : mp) // Вставляем в multimap ключи и значения
-		mtp.insert(std::make_pair(pair.second, pair.first)); // и сразу он сортирует
+	for (auto& i : symbols) mp[i]++; // РЈРІРёР»РёС‡РёРІР°РµРј Р·РЅР°С‡РµРЅРёСЏ Рё РїСЂРёСЃРІР°РёРІР°РµРј СЌР»РµРјРµРЅС‚С‹
+	for (auto& pair : mp) // Р’СЃС‚Р°РІР»СЏРµРј РІ multimap РєР»СЋС‡Рё Рё Р·РЅР°С‡РµРЅРёСЏ
+		mtp.insert(std::make_pair(pair.second, pair.first)); // Рё СЃСЂР°Р·Сѓ РѕРЅ СЃРѕСЂС‚РёСЂСѓРµС‚
 
 	std::cout << "[IN]: " << symbols << std::endl;
 	std::cout << "[OUT]:\n";
-	std::multimap<int, char>::reverse_iterator rit;	// Создаем обратный итератор
- 	for (rit = mtp.rbegin(); rit != mtp.rend(); rit++) // и присваеваем ему обратный итератор отсортированного контейнера
-		std::cout << rit->second << ": " << rit->first << std::endl; // выводим значение потом ключи
+	std::multimap<int, char>::reverse_iterator rit;	// РЎРѕР·РґР°РµРј РѕР±СЂР°С‚РЅС‹Р№ РёС‚РµСЂР°С‚РѕСЂ
+ 	for (rit = mtp.rbegin(); rit != mtp.rend(); rit++) // Рё РїСЂРёСЃРІР°РµРІР°РµРј РµРјСѓ РѕР±СЂР°С‚РЅС‹Р№ РёС‚РµСЂР°С‚РѕСЂ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅРѕРіРѕ РєРѕРЅС‚РµР№РЅРµСЂР°
+		std::cout << rit->second << ": " << rit->first << std::endl; // РІС‹РІРѕРґРёРј Р·РЅР°С‡РµРЅРёРµ РїРѕС‚РѕРј РєР»СЋС‡Рё
 	return 0;
 }
